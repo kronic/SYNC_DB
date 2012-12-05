@@ -28,7 +28,28 @@ AFTER UPDATE
 AS
 IF UPDATE(ChiefAccountant)
 BEGIN
-		--Получаем имя запучченого триггера
+
+	DECLARE		@_BEF_ChiefAccountant						nvarchar(128)
+	DECLARE		@_AFT_ChiefAccountant						nvarchar(128)
+
+	-- Получим значение до обноления
+	/*********************************************/		
+	SELECT	@_BEF_ChiefAccountant					=		UPD.ChiefAccountant
+	FROM	DELETED AS UPD
+	/*********************************************/	
+	  	
+	--Заполняем переменные после добавленния значения.	
+	/*********************************************/
+	SELECT 
+	TOP 1		@_AFT_ChiefAccountant				=		UPD.ChiefAccountant
+	FROM		INSERTED as UPD;
+	/*********************************************/
+
+	IF(	@_BEF_ChiefAccountant	=	@_AFT_ChiefAccountant 
+	OR  @_AFT_ChiefAccountant	IS	NULL 
+		) RETURN
+
+	--Получаем имя запучченого триггера
 	/*********************************************/
 	DECLARE		@S			varchar(100)
 	DECLARE		@K			int
@@ -111,7 +132,8 @@ BEGIN
 		
 		--Обновляем существующие почтовый адресс
 		/*********************************************/	
-		UPDATE		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+		UPDATE
+		TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
 		SET			GL_BUH					=		@_LastName + ' ' + @_FirstName + ' ' + @_MiddleName
 		WHERE		ID_COMPANY 				=		@_ID_COMPANY			
 		/*********************************************/					
@@ -121,7 +143,8 @@ BEGIN
 		
 		--Обновляем существующие почтовый адресс
 		/*********************************************/	
-		UPDATE		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+		UPDATE
+		TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
 		SET			GL_BUH					=		@_LastName + ' ' + @_FirstName + ' ' + @_MiddleName
 		WHERE		ID_COMPANY 				=		@_ID_COMPANY
 		AND			USE_DEFAULT				=		'True'		

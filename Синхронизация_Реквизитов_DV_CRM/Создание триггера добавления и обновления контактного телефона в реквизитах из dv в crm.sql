@@ -26,6 +26,26 @@ AFTER UPDATE
 AS
 IF(UPDATE(Phone))
 BEGIN
+	DECLARE		@_BEF_Phone						nvarchar(128)
+	DECLARE		@_AFT_Phone						nvarchar(128)
+
+	-- Получим значение до обноления
+	/*********************************************/		
+	SELECT	@_BEF_Phone					=		UPD.Phone
+	FROM	DELETED AS UPD
+	/*********************************************/	
+	  	
+	--Заполняем переменные после добавленния значения.	
+	/*********************************************/
+	SELECT 
+	TOP 1		@_AFT_Phone				=		UPD.Phone
+	FROM		INSERTED as UPD;
+	/*********************************************/
+
+	IF(	@_BEF_Phone	=	@_AFT_Phone 
+	OR  @_AFT_Phone	IS	NULL 
+		) RETURN
+
 	--Получаем имя запучченого триггера
 	/*********************************************/
 	DECLARE		@S			varchar(100)
@@ -86,7 +106,8 @@ BEGIN
 	BEGIN
 			--Обновляем существующие реквизиты
 		/*********************************************/	
-		UPDATE		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+		UPDATE
+		TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
 		SET			KONT_TEL				=		UPD.Phone			
 		FROM		INSERTED AS UPD
 		WHERE		ID_COMPANY				=		UPD.Telex			
@@ -96,7 +117,8 @@ BEGIN
 		BEGIN
 		--Обновляем существующие реквизиты
 		/*********************************************/	
-		UPDATE		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+		UPDATE
+		TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
 		SET			KONT_TEL				=		UPD.Phone			
 		FROM		INSERTED AS UPD
 		WHERE		ID_COMPANY				=		UPD.Telex

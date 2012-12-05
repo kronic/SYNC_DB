@@ -26,6 +26,27 @@ AFTER UPDATE
 AS
 IF(UPDATE(BankName))
 BEGIN
+	
+	DECLARE		@_BEF_BankName						nvarchar(128)
+	DECLARE		@_AFT_BankName						nvarchar(128)
+
+	-- Получим значение до обноления
+	/*********************************************/		
+	SELECT	@_BEF_BankName					=		UPD.BankName
+	FROM	DELETED AS UPD
+	/*********************************************/	
+	  	
+	--Заполняем переменные после добавленния значения.	
+	/*********************************************/
+	SELECT 
+	TOP 1		@_AFT_BankName				=		UPD.BankName
+	FROM		INSERTED as UPD;
+	/*********************************************/
+
+	IF(	@_BEF_BankName	=	@_AFT_BankName 
+	OR  @_AFT_BankName	IS	NULL 
+		) RETURN
+
 	--Получаем имя запучченого триггера
 	/*********************************************/
 	DECLARE		@S			varchar(100)
@@ -92,7 +113,8 @@ BEGIN
 	BEGIN
 		--Обновляем существующие реквизиты
 		/*********************************************/	
-		UPDATE		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+		UPDATE
+		TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
 		SET			BANK_NAME				=		UPD.BankName			
 		FROM		INSERTED AS UPD
 		WHERE		ID_COMPANY				=		UPD.Telex			
@@ -102,7 +124,8 @@ BEGIN
 	BEGIN
 		--Обновляем существующие реквизиты
 		/*********************************************/	
-		UPDATE		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+		UPDATE
+		TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
 		SET			BANK_NAME				=		UPD.BankName			
 		FROM		INSERTED AS UPD
 		WHERE		ID_COMPANY				=		UPD.Telex

@@ -28,6 +28,27 @@ AFTER UPDATE
 AS
 IF UPDATE(Manager)
 BEGIN
+	
+	DECLARE		@_BEF_Manager						nvarchar(128)
+	DECLARE		@_AFT_Manager						nvarchar(128)
+
+	-- Получим значение до обноления
+	/*********************************************/		
+	SELECT	@_BEF_Manager					=		UPD.Manager
+	FROM	DELETED AS UPD
+	/*********************************************/	
+	  	
+	--Заполняем переменные после добавленния значения.	
+	/*********************************************/
+	SELECT 
+	TOP 1		@_AFT_Manager				=		UPD.Manager
+	FROM		INSERTED as UPD;
+	/*********************************************/
+
+	IF(	@_BEF_Manager	=	@_AFT_Manager 
+	OR  @_AFT_Manager	IS	NULL 
+		) RETURN
+
 		--Получаем имя запучченого триггера
 	/*********************************************/
 	DECLARE		@S			varchar(100)
@@ -110,7 +131,8 @@ BEGIN
 		
 		--Обновляем существующие почтовый адресс
 		/*********************************************/	
-		UPDATE		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+		UPDATE
+		TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
 		SET			DIR_NAME				=		@_LastName + ' ' + @_FirstName + ' ' + @_MiddleName
 		WHERE		ID_COMPANY 				=		@_ID_COMPANY			
 		/*********************************************/
@@ -119,7 +141,8 @@ BEGIN
 	BEGIN
 		--Обновляем существующие почтовый адресс
 		/*********************************************/	
-		UPDATE		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+		UPDATE
+		TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
 		SET			DIR_NAME				=		@_LastName + ' ' + @_FirstName + ' ' + @_MiddleName
 		WHERE		ID_COMPANY 				=		@_ID_COMPANY
 		AND			USE_DEFAULT				=		'True'		

@@ -26,6 +26,26 @@ AFTER UPDATE
 AS
 IF(UPDATE(FullName))
 BEGIN
+	DECLARE		@_BEF_FullName						nvarchar(128)
+	DECLARE		@_AFT_FullName						nvarchar(128)
+
+	-- Получим значение до обноления
+	/*********************************************/		
+	SELECT	@_BEF_FullName					=		UPD.FullName
+	FROM	DELETED AS UPD
+	/*********************************************/	
+	  	
+	--Заполняем переменные после добавленния значения.	
+	/*********************************************/
+	SELECT 
+	TOP 1		@_AFT_FullName				=		UPD.FullName
+	FROM		INSERTED as UPD;
+	/*********************************************/
+
+	IF(	@_BEF_FullName	=	@_AFT_FullName 
+	OR  @_AFT_FullName	IS	NULL 
+		) RETURN
+
 	--Получаем имя запучченого триггера
 	/*********************************************/
 	DECLARE		@S			varchar(100)
@@ -86,7 +106,8 @@ BEGIN
 	BEGIN
 	--Обновляем существующие реквизиты
 		/*********************************************/	
-		UPDATE		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+		UPDATE
+		TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
 		SET			FULL_NAME				=		UPD.FullName			
 		FROM		INSERTED AS UPD
 		WHERE		ID_COMPANY				=		UPD.Telex			
@@ -96,7 +117,8 @@ BEGIN
 	BEGIN
 		--Обновляем существующие реквизиты
 		/*********************************************/	
-		UPDATE		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+		UPDATE
+		TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
 		SET			FULL_NAME				=		UPD.FullName			
 		FROM		INSERTED AS UPD
 		WHERE		ID_COMPANY				=		UPD.Telex

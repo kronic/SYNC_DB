@@ -26,6 +26,26 @@ AFTER UPDATE
 AS
 IF(UPDATE(Fax)) 
 BEGIN
+	DECLARE		@_BEF_Fax						nvarchar(128)
+	DECLARE		@_AFT_Fax						nvarchar(128)
+
+	-- Получим значение до обноления
+	/*********************************************/		
+	SELECT	@_BEF_Fax					=		UPD.Fax
+	FROM	DELETED AS UPD
+	/*********************************************/	
+	  	
+	--Заполняем переменные после добавленния значения.	
+	/*********************************************/
+	SELECT 
+	TOP 1		@_AFT_Fax				=		UPD.Fax
+	FROM		INSERTED as UPD;
+	/*********************************************/
+
+	IF(	@_BEF_Fax	=	@_AFT_Fax 
+	OR  @_AFT_Fax	IS	NULL 
+		) RETURN
+
 	--Получаем имя запучченого триггера
 	/*********************************************/
 	DECLARE		@S			varchar(100)
@@ -94,7 +114,8 @@ BEGIN
 		
 		--Обновляем существующие реквизиты
 		/*********************************************/	
-		UPDATE		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+		UPDATE
+		TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
 		SET			FAX						=		UPD.Fax			
 		FROM		INSERTED AS UPD
 		WHERE		ID_COMPANY				=		UPD.Telex			
@@ -105,7 +126,8 @@ BEGIN
 		
 		--Обновляем существующие реквизиты
 		/*********************************************/	
-		UPDATE		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+		UPDATE
+		TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
 		SET			FAX						=		UPD.FAX			
 		FROM		INSERTED AS UPD
 		WHERE		ID_COMPANY				=		UPD.Telex

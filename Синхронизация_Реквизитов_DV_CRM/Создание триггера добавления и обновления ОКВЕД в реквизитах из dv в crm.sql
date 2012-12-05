@@ -26,6 +26,26 @@ AFTER UPDATE
 AS
 IF(UPDATE(OKONH))
 BEGIN
+	DECLARE		@_BEF_OKONH						nvarchar(128)
+	DECLARE		@_AFT_OKONH						nvarchar(128)
+
+	-- Получим значение до обноления
+	/*********************************************/		
+	SELECT	@_BEF_OKONH					=		UPD.OKONH
+	FROM	DELETED AS UPD
+	/*********************************************/	
+	  	
+	--Заполняем переменные после добавленния значения.	
+	/*********************************************/
+	SELECT 
+	TOP 1		@_AFT_OKONH				=		UPD.OKONH
+	FROM		INSERTED as UPD;
+	/*********************************************/
+
+	IF(	@_BEF_OKONH	=	@_AFT_OKONH 
+	OR  @_AFT_OKONH	IS	NULL 
+		) RETURN
+
 	--Получаем имя запучченого триггера
 	/*********************************************/
 	DECLARE		@S			varchar(100)
@@ -92,9 +112,10 @@ BEGIN
 	BEGIN
 		--Обновляем существующие реквизиты
 		/*********************************************/	
-		UPDATE		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+		UPDATE
+		TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
 		SET			OKVED					=		UPD.OKONH
-			FROM		INSERTED AS UPD
+		FROM		INSERTED AS UPD
 		WHERE		ID_COMPANY				=		UPD.Telex
 		/*********************************************/
 	END
@@ -102,7 +123,8 @@ BEGIN
 	BEGIN
 		--Обновляем существующие реквизиты
 		/*********************************************/	
-		UPDATE		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+		UPDATE
+		TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
 		SET			OKVED					=		UPD.OKONH
 		FROM		INSERTED AS UPD
 		WHERE		ID_COMPANY				=		UPD.Telex
@@ -117,4 +139,4 @@ BEGIN
 	/*********************************************/	
 	
 	execute [CBaseCRM_Fresh].[dbo]._log 'Stop', @S
-END		
+END

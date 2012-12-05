@@ -26,6 +26,27 @@ AFTER UPDATE
 AS
 IF(UPDATE(KPP))
 BEGIN
+
+	DECLARE		@_BEF_KPP						nvarchar(128)
+	DECLARE		@_AFT_KPP						nvarchar(128)
+
+	-- Получим значение до обноления
+	/*********************************************/		
+	SELECT	@_BEF_KPP					=		UPD.KPP
+	FROM	DELETED AS UPD
+	/*********************************************/	
+	  	
+	--Заполняем переменные после добавленния значения.	
+	/*********************************************/
+	SELECT 
+	TOP 1		@_AFT_KPP				=		UPD.KPP
+	FROM		INSERTED as UPD;
+	/*********************************************/
+
+	IF(	@_BEF_KPP	=	@_AFT_KPP 
+	OR  @_AFT_KPP	IS	NULL 
+		) RETURN
+
 	--Получаем имя запучченого триггера
 	/*********************************************/
 	DECLARE		@S			varchar(100)
@@ -91,7 +112,8 @@ BEGIN
 	BEGIN
 	--Обновляем существующие реквизиты
 	/*********************************************/	
-		UPDATE		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+		UPDATE
+		TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
 		SET			KPP						=		UPD.KPP
 		FROM		INSERTED AS UPD
 		WHERE		ID_COMPANY				=		UPD.Telex
@@ -101,7 +123,8 @@ BEGIN
 	BEGIN
 		--Обновляем существующие реквизиты
 		/*********************************************/	
-		UPDATE		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+		UPDATE
+		TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
 		SET			KPP						=		UPD.KPP
 		FROM		INSERTED AS UPD
 		WHERE		ID_COMPANY				=		UPD.Telex

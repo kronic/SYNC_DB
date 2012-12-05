@@ -26,6 +26,27 @@ AFTER UPDATE
 AS
 IF(UPDATE(INN))
 BEGIN
+
+	DECLARE		@_BEF_INN						nvarchar(128)
+	DECLARE		@_AFT_INN						nvarchar(128)
+
+	-- Получим значение до обноления
+	/*********************************************/		
+	SELECT	@_BEF_INN					=		UPD.INN
+	FROM	DELETED AS UPD
+	/*********************************************/	
+	  	
+	--Заполняем переменные после добавленния значения.	
+	/*********************************************/
+	SELECT 
+	TOP 1		@_AFT_INN				=		UPD.INN
+	FROM		INSERTED as UPD;
+	/*********************************************/
+
+	IF(	@_BEF_INN	=	@_AFT_INN 
+	OR  @_AFT_INN	IS	NULL 
+		) RETURN
+
 	--Получаем имя запучченого триггера
 	/*********************************************/
 	DECLARE		@S			varchar(100)
@@ -93,7 +114,8 @@ BEGIN
 		
 		--Обновляем существующие реквизиты
 		/*********************************************/	
-		UPDATE		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+		UPDATE
+		TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
 		SET			INN						=		UPD.INN
 		FROM		INSERTED AS UPD
 		WHERE		ID_COMPANY				=		UPD.Telex
@@ -104,7 +126,8 @@ BEGIN
 		
 		--Обновляем существующие реквизиты
 		/*********************************************/	
-		UPDATE		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+		UPDATE
+		TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
 		SET			INN						=		UPD.INN
 		FROM		INSERTED AS UPD
 		WHERE		ID_COMPANY				=		UPD.Telex

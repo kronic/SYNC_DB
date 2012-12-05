@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Логгирование">
+  <Items>
+    <LogicalFolder Name="Соединения" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="ITS04V\SQL2005:sa">
+          <Created>2012-11-21T11:41:34.8653158+04:00</Created>
+          <Type>SQL</Type>
+          <Server>ITS04V\SQL2005</Server>
+          <UserName>sa</UserName>
+          <Authentication>SQL</Authentication>
+          <InitialDB />
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName />
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Запросы" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="_Stop_All_User.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>_Stop_All_User.sql</FullPath>
+        </FileNode>
+        <FileNode Name="_Престроить все индексы БД.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>_Престроить все индексы БД.sql</FullPath>
+        </FileNode>
+        <FileNode Name="_Просмотр Триггеров БД.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>_Просмотр Триггеров БД.sql</FullPath>
+        </FileNode>
+        <FileNode Name="_Скрипт просмотра лога.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>_Скрипт просмотра лога.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Создание процедуры логгирования.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>Создание процедуры логгирования.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Создание таблицы логгирования.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>Создание таблицы логгирования.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Разное" Type="3" Sorted="true">
+      <Items>
+        <FileNode Name="Логгирование.docx">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>Логгирование.docx</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>

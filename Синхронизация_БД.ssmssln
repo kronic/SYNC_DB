@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# SQL Server Management Studio Solution File, Format Version 11.00
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Синхронизация_Контактов_DV_CRM", "Синхронизация_Контактов_DV_CRM\Синхронизация_Контактов_DV_CRM.ssmssqlproj", "{85A9D9A5-1A87-4DDF-819C-E07E6F04E133}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Синхронизация_Контактов_CRM_DV", "Синхронизация_Контактов_CRM_DV\Синхронизация_Контактов_CRM_DV.ssmssqlproj", "{D3149ED3-ADEF-4647-BA26-398D69A11914}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Логгирование", "Логгирование\Логгирование.ssmssqlproj", "{44873E65-239E-421B-80ED-9B37B0BE1ADA}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Синхронизация_Компаний_CRM_DV", "Синхронизация_Компаний_CRM_DV\Синхронизация_Компаний_CRM_DV.ssmssqlproj", "{A5C6FBAC-D23E-4D10-9404-7EDE10304E25}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Синхронизация_Реквизитов_CRM_DV", "Синхронизация_Реквизитов_CRM_DV\Синхронизация_Реквизитов_CRM_DV.ssmssqlproj", "{8CB3DFDB-C702-40D5-8B35-A28715B64144}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Синхронизация_Компаний_DV_CRM", "Синхронизация_Компаний_DV_CRM\Синхронизация_Компаний_DV_CRM.ssmssqlproj", "{5F00227E-8B03-4885-A20C-DF90E3FA9971}"
+EndProject
+Project("{4F2E2C19-372F-40D8-9FA7-9D2138C6997A}") = "Синхронизация_Реквизитов_DV_CRM", "Синхронизация_Реквизитов_DV_CRM\Синхронизация_Реквизитов_DV_CRM.ssmssqlproj", "{1410A667-A24F-44B2-8BB3-F6F31E560A17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Default = Default|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85A9D9A5-1A87-4DDF-819C-E07E6F04E133}.Default|Default.ActiveCfg = Default
+		{D3149ED3-ADEF-4647-BA26-398D69A11914}.Default|Default.ActiveCfg = Default
+		{44873E65-239E-421B-80ED-9B37B0BE1ADA}.Default|Default.ActiveCfg = Default
+		{A5C6FBAC-D23E-4D10-9404-7EDE10304E25}.Default|Default.ActiveCfg = Default
+		{8CB3DFDB-C702-40D5-8B35-A28715B64144}.Default|Default.ActiveCfg = Default
+		{A6D77A43-7863-4B1D-9148-A906BF4B5114}.Default|Default.ActiveCfg = Default
+		{5F00227E-8B03-4885-A20C-DF90E3FA9971}.Default|Default.ActiveCfg = Default
+		{1410A667-A24F-44B2-8BB3-F6F31E560A17}.Default|Default.ActiveCfg = Default
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Синхронизация_Компаний_DV_CRM">
+  <Items>
+    <LogicalFolder Name="Соединения" Type="2" Sorted="true">
+      <Items>
+        <ConnectionNode Name="ITS04V\SQL2005:sa">
+          <Created>2012-11-21T16:53:25.8458378+04:00</Created>
+          <Type>SQL</Type>
+          <Server>ITS04V\SQL2005</Server>
+          <UserName>sa</UserName>
+          <Authentication>SQL</Authentication>
+          <InitialDB>master</InitialDB>
+          <LoginTimeout>15</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName>Среда Microsoft SQL Server Management Studio - запрос</ApplicationName>
+        </ConnectionNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Запросы" Type="0" Sorted="true">
+      <Items>
+        <FileNode Name="_Неправильные компании.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>_Неправильные компании.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Создание триггера добавления и обновления OKPO из dv в crm.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>Создание триггера добавления и обновления OKPO из dv в crm.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Создание триггера добавления и обновления URL из dv в crm.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>Создание триггера добавления и обновления URL из dv в crm.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Создание триггера добавления и обновления вид компании из dv в crm.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>Создание триггера добавления и обновления вид компании из dv в crm.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Создание триггера добавления и обновления дополнительной информации из dv в crm.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>Создание триггера добавления и обновления дополнительной информации из dv в crm.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Создание триггера добавления и обновления имени компании из dv в crm.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>Создание триггера добавления и обновления имени компании из dv в crm.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Создание триггера добавления и обновления ИНН из dv в crm.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>Создание триггера добавления и обновления ИНН из dv в crm.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Создание триггера добавления компании из dv в crm.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>Создание триггера добавления компании из dv в crm.sql</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+    <LogicalFolder Name="Разное" Type="3" Sorted="true">
+      <Items>
+        <FileNode Name="Синхронизация_Компаний_DV_CRM.docx">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>Синхронизация_Компаний_DV_CRM.docx</FullPath>
+        </FileNode>
+      </Items>
+    </LogicalFolder>
+  </Items>
+</SqlWorkbenchSqlProject>

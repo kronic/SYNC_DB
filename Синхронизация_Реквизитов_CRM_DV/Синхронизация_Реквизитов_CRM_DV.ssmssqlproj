@@ -20,9 +20,9 @@
     <LogicalFolder Name="Запросы" Type="0" Sorted="true">
       <Items>
         <FileNode Name="_Удаление записей реквизитов ссылающихся на несуществующий ключ.sql">
-          <AssociatedConnectionMoniker />
-          <AssociatedConnSrvName />
-          <AssociatedConnUserName />
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
           <FullPath>_Удаление записей реквизитов ссылающихся на несуществующий ключ.sql</FullPath>
         </FileNode>
         <FileNode Name="Создание триггера добавления и обновления email в реквизитах из crm в dv.sql">
@@ -79,11 +79,11 @@
           <AssociatedConnUserName>sa</AssociatedConnUserName>
           <FullPath>Создание триггера добавления и обновления ОКПО в реквизитах из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создание триггера добавления и обновления падежей руководителя в реквизитах из crm в dv.sql">
+        <FileNode Name="Создание триггера добавления и обновления падежей директора в реквизитах из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создание триггера добавления и обновления падежей руководителя в реквизитах из crm в dv.sql</FullPath>
+          <FullPath>Создание триггера добавления и обновления падежей директора в реквизитах из crm в dv.sql</FullPath>
         </FileNode>
         <FileNode Name="Создание триггера добавления и обновления почтового адреса в реквизитах из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>

@@ -65,21 +65,24 @@ BEGIN
 	/*********************************************/
 	IF(@_ID_VID_COMPANY = 15)
 	BEGIN
-		UPDATE		[Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
+		UPDATE
+		TOP (1)		[Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
 		SET			[IsVendor]						=		1,
 					[IsClient]						=		0
 		WHERE		[Telex]							=		@_ID_COMPANY
 	END
 	ELSE IF(@_ID_VID_COMPANY = 15)
 	BEGIN
-		UPDATE		[Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
+		UPDATE
+		TOP (1)		[Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
 		SET			[IsVendor]						=		0,
 					[IsClient]						=		0
 		WHERE		[Telex]							=		@_ID_COMPANY
 	END
 	ELSE
 	BEGIN
-		UPDATE		[Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
+		UPDATE
+		TOP (1)		[Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
 		SET			[IsClient]						=		1,
 					[IsVendor]						=		0
 		WHERE		[Telex]							=		@_ID_COMPANY	

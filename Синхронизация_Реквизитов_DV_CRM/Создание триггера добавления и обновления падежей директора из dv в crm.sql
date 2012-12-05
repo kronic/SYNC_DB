@@ -70,7 +70,7 @@ BEGIN
 				@_NAMECASE				=		INS.NameCase	
 	FROM		INSERTED as INS;
 	
-	execute [CBaseCRM_Fresh].[dbo]._log '@@_DV_ID_CONTACT', @_DV_ID_CONTACT
+	--execute [CBaseCRM_Fresh].[dbo]._log '@@_DV_ID_CONTACT', @_DV_ID_CONTACT
 	
 	SELECT		@_DV_ID_COMPANY			=		ParentRowID
 	FROM		[dvtable_{1a46bf0f-2d02-4ac9-8866-5adf245921e8}]
@@ -81,8 +81,8 @@ BEGIN
 	WHERE		RowID					=		@_DV_ID_COMPANY	
 	/*********************************************/
 	
-	execute [CBaseCRM_Fresh].[dbo]._log '@_DV_ID_COMPANY', @_DV_ID_COMPANY
-	execute [CBaseCRM_Fresh].[dbo]._log '@_ID_COMPANY', @_ID_COMPANY
+	--execute [CBaseCRM_Fresh].[dbo]._log '@_DV_ID_COMPANY', @_DV_ID_COMPANY
+	--execute [CBaseCRM_Fresh].[dbo]._log '@_ID_COMPANY', @_ID_COMPANY
 	
 	/*********************************************/
 	SELECT		@_COUNT					=		COUNT(ID_COMPANY)
@@ -112,21 +112,24 @@ BEGIN
 		IF(@_NAMECASE = 0)
 			--Обновляем существующие почтовый адресс
 			/*********************************************/	
-			UPDATE		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+			UPDATE
+			TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
 			SET			DIR_NAME				=		@_LastName + ' ' + @_FirstName + ' ' + @_MiddleName
 			WHERE		ID_COMPANY 				=		@_ID_COMPANY			
 			/*********************************************/
 		ELSE IF(@_NAMECASE = 1)
 			--Обновляем существующие почтовый адресс
 			/*********************************************/	
-			UPDATE		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+			UPDATE
+			TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
 			SET			DIR_NAME_1				=		@_LastName + ' ' + @_FirstName + ' ' + @_MiddleName
 			WHERE		ID_COMPANY 				=		@_ID_COMPANY			
 			/*********************************************/
 		ELSE IF(@_NAMECASE = 2)		
 			--Обновляем существующие почтовый адресс
 			/*********************************************/	
-			UPDATE		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+			UPDATE
+			TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
 			SET			DIR_NAME_2				=		@_LastName + ' ' + @_FirstName + ' ' + @_MiddleName
 			WHERE		ID_COMPANY 				=		@_ID_COMPANY			
 			/*********************************************/
@@ -137,7 +140,8 @@ BEGIN
 		IF(@_NAMECASE = 0)
 			--Обновляем существующие почтовый адресс
 			/*********************************************/	
-			UPDATE		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+			UPDATE
+			TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
 			SET			DIR_NAME				=		@_LastName + ' ' + @_FirstName + ' ' + @_MiddleName
 			WHERE		ID_COMPANY 				=		@_ID_COMPANY			
 			AND			USE_DEFAULT				=		'True'		
@@ -145,7 +149,8 @@ BEGIN
 		ELSE IF(@_NAMECASE = 1)
 			--Обновляем существующие почтовый адресс
 			/*********************************************/	
-			UPDATE		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+			UPDATE
+			TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
 			SET			DIR_NAME_1				=		@_LastName + ' ' + @_FirstName + ' ' + @_MiddleName
 			WHERE		ID_COMPANY 				=		@_ID_COMPANY
 			AND			USE_DEFAULT				=		'True'				
@@ -153,7 +158,8 @@ BEGIN
 			ELSE IF(@_NAMECASE = 2)		
 			--Обновляем существующие почтовый адресс
 			/*********************************************/	
-			UPDATE		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+			UPDATE
+			TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
 			SET			DIR_NAME_2				=		@_LastName + ' ' + @_FirstName + ' ' + @_MiddleName
 			WHERE		ID_COMPANY 				=		@_ID_COMPANY
 			AND			USE_DEFAULT				=		'True'	

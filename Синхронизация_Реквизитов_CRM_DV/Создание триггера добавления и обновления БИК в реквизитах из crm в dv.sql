@@ -76,7 +76,8 @@ BEGIN
 	DISABLE TRIGGER [DV_CRM_Upd_Req_BIK]
 	/*********************************************/	
 
-	UPDATE		[Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
+	UPDATE
+	TOP (1)		[Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
 	SET			[BIK]			=	@_BIK
 	WHERE		[Telex]			=	@_ID_COMPANY	
 	

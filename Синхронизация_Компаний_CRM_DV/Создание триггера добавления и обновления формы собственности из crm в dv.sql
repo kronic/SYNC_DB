@@ -115,7 +115,8 @@ BEGIN
 			SET			@_DV_OrgType			=	@_RowID
 		END	
 
-		UPDATE		[Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
+		UPDATE		
+		TOP (1)		[Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
 		SET			[OrgType]						=		@_DV_OrgType					
 		WHERE		[Telex]							=		@_ID_COMPANY
 

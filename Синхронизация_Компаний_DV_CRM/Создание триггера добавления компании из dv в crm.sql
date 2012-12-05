@@ -63,6 +63,12 @@ BEGIN
 	FROM		INSERTED as INS
 	/*********************************************/
 	
+	--Отключаем Триггер в CRM
+	/*********************************************/
+	ALTER TABLE [CBaseCRM_Fresh].[dbo].[COMPANY]
+	DISABLE TRIGGER ALL
+	/*********************************************/
+	--EXECUTE [CBaseCRM_Fresh].[dbo]._log '@_DV_ID_COMPANY', @_DV_ID_COMPANY	
 	--Добовляем запись в crm.
 	/*********************************************/
 	INSERT INTO	[CBaseCRM_Fresh].[dbo].[COMPANY]
@@ -74,17 +80,27 @@ BEGIN
 			)
 	/*********************************************/
 
+
 	--Записываем в переменную значение нового ключа добавленного в CRM
 	/*********************************************/
 	SET			@_NEW_ID_COMPANY		=		@@IDENTITY
-	EXECUTE [CBaseCRM_Fresh].[dbo]._log '@_NEW_ID_COMPANY', @_NEW_ID_COMPANY
+	--EXECUTE [CBaseCRM_Fresh].[dbo]._log '@_NEW_ID_COMPANY', @_NEW_ID_COMPANY
+	/*********************************************/
+	
+	--Включение триггера CRM
+	/*********************************************/
+	ALTER TABLE [CBaseCRM_Fresh].[dbo].[COMPANY]
+	ENABLE TRIGGER ALL
 	/*********************************************/
 
 	--Запишем ключ контакта crm в dv
 	/*********************************************/
-	UPDATE	[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
+	UPDATE 
+	TOP (1)	[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
 	SET		Telex						=		@_NEW_ID_COMPANY		
 	WHERE	RowID						=		@_DV_ID_COMPANY
 	/*********************************************/
+
+
 	execute [CBaseCRM_Fresh].[dbo]._log 'Stop', @S
 END

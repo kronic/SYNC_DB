@@ -90,7 +90,7 @@ BEGIN
 	--Отключаем Триггер в DV
 	/*********************************************/
 	ALTER TABLE Copy_DV.[dbo].[dvtable_{1a46bf0f-2d02-4ac9-8866-5adf245921e8}] 
-	DISABLE TRIGGER DV_CRM_Ins_Contact
+	DISABLE TRIGGER ALL
 	/*********************************************/	
 	
 	INSERT INTO  Copy_DV.[dbo].[dvtable_{1a46bf0f-2d02-4ac9-8866-5adf245921e8}]
@@ -115,11 +115,17 @@ BEGIN
 	--Включаем Триггер в DV
 	/*********************************************/
 	ALTER TABLE [Copy_DV].[dbo].[dvtable_{1a46bf0f-2d02-4ac9-8866-5adf245921e8}]
-	ENABLE TRIGGER DV_CRM_Ins_Contact
+	ENABLE TRIGGER ALL
 	/*********************************************/			
-	UPDATE	LIST_CONTACT_MAN
+	UPDATE
+	TOP (1)	LIST_CONTACT_MAN
 	SET		[DV_ID]				=		@NEW_RowID
+	WHERE	[ID_CONTACT_MAN]	=	@_ID_CONTACT_MAN_INS
+
 	execute [CBaseCRM_Fresh].[dbo]._log 'Stop', @S
 
 END
+GO
+--Выполнение триггера первым
+exec sp_settriggerorder 'dbo.CRM_DV_LIST_CONTACT_MAN', 'first', 'insert'
 GO

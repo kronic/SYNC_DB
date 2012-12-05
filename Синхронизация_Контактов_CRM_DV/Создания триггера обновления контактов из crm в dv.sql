@@ -61,6 +61,8 @@ BEGIN
 				@_FAM_PART					=		INS.FAM_PART				
 	FROM		INSERTED as INS;
 	/*********************************************/
+	--execute _log '@_ID_CONTACT_MAN_INS', @_ID_CONTACT_MAN_INS	
+	
 		
 	--Приводим к виду DV
 	/*********************************************/
@@ -77,10 +79,11 @@ BEGIN
 	--Отключаем Триггер в DV
 	/*********************************************/
 	ALTER TABLE Copy_DV.[dbo].[dvtable_{1a46bf0f-2d02-4ac9-8866-5adf245921e8}] 
-	DISABLE TRIGGER DV_CRM_Upd_Contact
+	DISABLE TRIGGER ALL
 	/*********************************************/	
 
-	UPDATE		Copy_DV.[dbo].[dvtable_{1a46bf0f-2d02-4ac9-8866-5adf245921e8}]
+	UPDATE
+	TOP(1)		Copy_DV.[dbo].[dvtable_{1a46bf0f-2d02-4ac9-8866-5adf245921e8}]
 	SET			FirstName					=		@_DV_NAME_PART,
 				MiddleName					=		@_DV_OTCH_PART,
 				LastName					=		@_DV_FAM_PART
@@ -90,7 +93,7 @@ BEGIN
 	--Включаем Триггер в DV
 	/*********************************************/
 	ALTER TABLE Copy_DV.[dbo].[dvtable_{1a46bf0f-2d02-4ac9-8866-5adf245921e8}] 
-	ENABLE TRIGGER DV_CRM_Upd_Contact
+	ENABLE TRIGGER ALL
 	/*********************************************/	
 	
 	execute [CBaseCRM_Fresh].[dbo]._log 'Stop', @S

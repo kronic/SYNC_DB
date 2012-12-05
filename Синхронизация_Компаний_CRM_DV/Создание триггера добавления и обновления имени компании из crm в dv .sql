@@ -130,7 +130,8 @@ BEGIN
 		
 		--Обновляем ключ dv_id
 		/*********************************************/	
-		UPDATE	[dbo].[COMPANY]
+		UPDATE
+		TOP (1)	[dbo].[COMPANY]
 		SET		[DV_ID]							=			@NEW_RowID
 		WHERE	ID_COMPANY						=			@_ID_COMPANY
 		/*********************************************/	
@@ -152,8 +153,9 @@ BEGIN
 		DISABLE TRIGGER DV_CRM_Upd_Company_Name, DV_CRM_Upd_Req_Full_Name
 		/*********************************************/	
 
-		UPDATE		[Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
-		SET			FullName						=		@_DV_COMPANY_NAME,
+		UPDATE		
+		TOP (1)		[Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
+		SET			--FullName						=		@_DV_COMPANY_NAME
 					Name							=		@_DV_COMPANY_NAME
 		WHERE		[Telex]							=		@_ID_COMPANY
 

@@ -122,7 +122,8 @@ BEGIN
 			DISABLE TRIGGER [DV_CRM_Upd_Address]
 			/*********************************************/	
 
-			UPDATE		[Copy_DV].[dbo].[dvtable_{1de3032f-1956-4c37-ae14-a29f8b47e0ac}]
+			UPDATE
+			TOP (1)		[Copy_DV].[dbo].[dvtable_{1de3032f-1956-4c37-ae14-a29f8b47e0ac}]
 			SET			[Address]				=	@_ADRES
 			WHERE		[ParentRowID]			=	@_DV_ID_COMPANY
 			AND			[AddressType]			=	0

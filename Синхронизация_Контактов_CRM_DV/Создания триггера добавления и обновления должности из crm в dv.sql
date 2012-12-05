@@ -157,7 +157,8 @@ BEGIN
 		--execute _log '@_ID_CONTACT_MAN_INS', @_ID_CONTACT_MAN_INS
 		--execute _log '@_RowID_Position', @_RowID_Position		
 		
-		UPDATE		Copy_DV.[dbo].[dvtable_{1a46bf0f-2d02-4ac9-8866-5adf245921e8}]
+		UPDATE
+		TOP (1)		Copy_DV.[dbo].[dvtable_{1a46bf0f-2d02-4ac9-8866-5adf245921e8}]
 		SET			Position		=	@_RowID_Position
 		WHERE		CRM_ID			=	@_ID_CONTACT_MAN_INS
 		

@@ -86,7 +86,12 @@ BEGIN
 	FROM [CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
 	WHERE		ID_COMPANY				=		@_ID_COMPANY				
 	/*********************************************/
-	
+	--Отключаем Триггер в DV
+	/*********************************************/
+	ALTER TABLE [CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+	DISABLE TRIGGER ALL
+	/*********************************************/	
+
 	--Если нет реквизитов добавляем по умолчанию добовляем их.
 	/*********************************************/
 	IF(@_COUNT = 0)
@@ -125,5 +130,10 @@ BEGIN
 		AND			USE_DEFAULT				=		'True'
 		/*********************************************/
 	END
+	--Включаем Триггер в CRM
+	/*********************************************/		
+	ALTER TABLE [CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+	ENABLE TRIGGER ALL
+	/*********************************************/	
 	execute [CBaseCRM_Fresh].[dbo]._log 'Stop', @S
 END

@@ -92,7 +92,8 @@ BEGIN
 		DISABLE TRIGGER DV_CRM_Upd_Email
 		/*********************************************/	
 
-		UPDATE		Copy_DV.[dbo].[dvtable_{1a46bf0f-2d02-4ac9-8866-5adf245921e8}]
+		UPDATE
+		TOP (1)		Copy_DV.[dbo].[dvtable_{1a46bf0f-2d02-4ac9-8866-5adf245921e8}]
 		SET			[Email]							=		@_EMAIL
 		WHERE		CRM_ID							=		@_ID_CONTACT_MAN_INS
 		AND			CRM_ID							IS		NOT NULL
@@ -110,7 +111,8 @@ BEGIN
 		ALTER TABLE [Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
 		DISABLE TRIGGER DV_CRM_Upd_Req_email
 		/*********************************************/		
-		UPDATE		Copy_DV.[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
+		UPDATE
+		TOP (1)		Copy_DV.[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
 		SET			[Email]							=		@_EMAIL_INS
 		WHERE		Telex							=		@_ID_COMPANY
 		--Включаем Триггер в DV

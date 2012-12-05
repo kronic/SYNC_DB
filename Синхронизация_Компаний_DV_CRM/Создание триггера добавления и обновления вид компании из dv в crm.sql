@@ -24,7 +24,7 @@ CREATE TRIGGER DV_CRM_Upd_Vid_Company
 AFTER UPDATE
 /*********************************************/
 AS
-IF(UPDATE(IsClient))
+IF(UPDATE(IsClient) OR UPDATE(IsVendor))
 BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
 	-- interfering with SELECT statements.
@@ -33,22 +33,32 @@ BEGIN
 	DECLARE		@_BEF_IsClient					bit
 	DECLARE		@_AFT_IsClient					bit
 
+	DECLARE		@_BEF_IsVendor					bit
+	DECLARE		@_AFT_IsVendor					bit
+
 	-- Получим значение до обноления
 	/*********************************************/		
-	SELECT	@_BEF_IsClient				=		UPD.IsClient
+	SELECT	@_BEF_IsClient				=		UPD.IsClient,
+			@_BEF_isVendor				=		UPD.IsVendor
 	FROM	DELETED AS UPD
 	/*********************************************/	
 	  	
 	--Заполняем переменные после добавленния значения.	
 	/*********************************************/
 	SELECT 
-	TOP 1		@_AFT_IsClient			=		UPD.IsClient
+	TOP 1		@_AFT_IsClient			=		UPD.IsClient,
+				@_AFT_IsVendor			=		UPD.IsVendor
 	FROM		INSERTED as UPD;
 	/*********************************************/
 	
-	IF(	@_BEF_IsClient	=	@_AFT_IsClient 
-	OR  @_AFT_IsClient	IS	NULL 
-		) RETURN
+	IF((
+		@_AFT_IsClient	IS	NULL	
+	OR	@_BEF_IsClient	=	@_AFT_IsClient
+		)
+	AND	(
+		@_AFT_IsVendor	IS	NULL
+	OR	@_BEF_IsVendor	=	@_AFT_IsVendor 
+		)) RETURN
 
 	--Получаем имя запучченого триггера
 	/*********************************************/

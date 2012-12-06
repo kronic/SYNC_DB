@@ -92,13 +92,15 @@ BEGIN
 	ALTER TABLE [CBaseCRM_Fresh].[dbo].[COMPANY]
 	ENABLE TRIGGER ALL
 	/*********************************************/
-
+	EXECUTE [CBaseCRM_Fresh].[dbo]._log '@_DV_ID_COMPANY', @_DV_ID_COMPANY
+	EXECUTE [CBaseCRM_Fresh].[dbo]._log '@_NEW_ID_COMPANY', @_NEW_ID_COMPANY
+	
 	--Запишем ключ контакта crm в dv
 	/*********************************************/
 	UPDATE 
 	TOP (1)	[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
 	SET		Telex						=		@_NEW_ID_COMPANY		
-	WHERE	RowID						=		@_DV_ID_COMPANY
+	WHERE	RowID						=		@_DV_ID_COMPANY	
 	/*********************************************/
 
 

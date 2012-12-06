@@ -55,11 +55,17 @@ BEGIN
 			@_AFT_City					=		UPD.City					
 	FROM	INSERTED AS UPD
 	/*********************************************/
+	SET		@_BEF_Address				=		ISNULL(@_BEF_Address, '')
+	SET		@_BEF_ZipCode				=		ISNULL(@_BEF_ZipCode, '')
+	SET		@_BEF_City					=		ISNULL(@_BEF_City, '')	
+	SET		@_AFT_Address				=		ISNULL(@_AFT_Address, '')
+	SET		@_AFT_ZipCode				=		ISNULL(@_AFT_ZipCode, '')
+	SET		@_AFT_City					=		ISNULL(@_AFT_City, '')
 
-	IF	(	ISNULL(@_BEF_Address, '')	=	ISNULL(@_AFT_Address, '')
-	AND		ISNULL(@_BEF_ZipCode, '')	=	ISNULL(@_AFT_ZipCode, '')
-	AND		ISNULL(@_AFT_City, '')		=	ISNULL(@_AFT_City, '')
-		) RETURN
+	IF	(	@_BEF_Address				=	@_AFT_Address
+	AND		@_BEF_ZipCode				=	@_AFT_ZipCode
+	AND		@_BEF_City					=	@_AFT_City
+		)	RETURN
 
 	--execute [CBaseCRM_Fresh].[dbo]._log '@_BEF_Address', @_BEF_Address
 	--execute [CBaseCRM_Fresh].[dbo]._log '@_BEF_ZipCode', @_BEF_ZipCode
@@ -140,93 +146,103 @@ BEGIN
 				) 
 		VALUES	(
 				@_ID_COMPANY,
-				1
+				'True'
 				) 	
 	END
 	/*********************************************/		
 	IF(@_COUNT = 1)
 	BEGIN
-		IF(@_ADDRESS_TYPE = 1)
+		--execute [CBaseCRM_Fresh].[dbo]._log '@_COUNT', @_COUNT
+		
+		IF(@_ADDRESS_TYPE = 0)
 		BEGIN
+			--execute [CBaseCRM_Fresh].[dbo]._log 'FACT@_AFT_Address', @_AFT_Address
+			--execute [CBaseCRM_Fresh].[dbo]._log '@_ID_COMPANY', @_ID_COMPANY
 			--Обновляем существующие почтовый адресс
 			/*********************************************/	
 			UPDATE
 			TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
-			SET			POCHT_ADR				=		UPD.[Address]
-			FROM		INSERTED AS UPD
+			SET			ADRES_FACT				=		@_AFT_Address			
+			WHERE		ID_COMPANY 				=		@_ID_COMPANY
+			/*********************************************/			
+		END
+		IF(@_ADDRESS_TYPE = 1)
+		BEGIN
+			--execute [CBaseCRM_Fresh].[dbo]._log 'POCHT@_AFT_Address', @_AFT_Address
+			--execute [CBaseCRM_Fresh].[dbo]._log '@_ID_COMPANY', @_ID_COMPANY
+			--Обновляем существующие почтовый адресс
+			/*********************************************/	
+			UPDATE
+			TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+			SET			POCHT_ADR				=		@_AFT_Address
 			WHERE		ID_COMPANY 				=		@_ID_COMPANY			
 			/*********************************************/
 		END
 		IF(@_ADDRESS_TYPE = 2)
 		BEGIN
+			--execute [CBaseCRM_Fresh].[dbo]._log 'YUR@_AFT_Address', @_AFT_Address
+			--execute [CBaseCRM_Fresh].[dbo]._log '@_ID_COMPANY', @_ID_COMPANY
 			--Обновляем существующие почтовый адресс
 			/*********************************************/	
 			UPDATE
 			TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
-			SET			ADRES_YUR				=		UPD.[Address]
-			FROM		INSERTED AS UPD
+			SET			ADRES_YUR				=		@_AFT_Address
 			WHERE		ID_COMPANY 				=		@_ID_COMPANY			
 			/*********************************************/
 		END
-		IF(@_ADDRESS_TYPE = 0)
-		BEGIN
-			--Обновляем существующие почтовый адресс
-			/*********************************************/	
-			UPDATE
-			TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
-			SET			ADRES_FACT				=		UPD.[Address]
-			FROM		INSERTED AS UPD
-			WHERE		ID_COMPANY 				=		@_ID_COMPANY
-			/*********************************************/			
-		END
+	
 	END
 	ELSE
 	BEGIN
-		IF(@_ADDRESS_TYPE = 1)
+		--execute [CBaseCRM_Fresh].[dbo]._log '@_COUNT', @_COUNT
+		IF(@_ADDRESS_TYPE = 0)
 		BEGIN
+			--execute [CBaseCRM_Fresh].[dbo]._log 'FACT@_AFT_Address', @_AFT_Address
+			--execute [CBaseCRM_Fresh].[dbo]._log '@_ID_COMPANY', @_ID_COMPANY			
 			--Обновляем существующие почтовый адресс
 			/*********************************************/	
 			UPDATE
 			TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
-			SET			POCHT_ADR				=		UPD.[Address]
-			FROM		INSERTED AS UPD
+			SET			ADRES_FACT				=		@_AFT_Address
+			WHERE		ID_COMPANY 				=		@_ID_COMPANY
+			AND			USE_DEFAULT				=		'True'
+			/*********************************************/
+		END
+		IF(@_ADDRESS_TYPE = 1)
+		BEGIN
+			--execute [CBaseCRM_Fresh].[dbo]._log 'POCHT@_AFT_Address', @_AFT_Address
+			--execute [CBaseCRM_Fresh].[dbo]._log '@_ID_COMPANY', @_ID_COMPANY
+			--Обновляем существующие почтовый адресс
+			/*********************************************/	
+			UPDATE
+			TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
+			SET			POCHT_ADR				=		@_AFT_Address
 			WHERE		ID_COMPANY 				=		@_ID_COMPANY
 			AND			USE_DEFAULT				=		'True'		
 			/*********************************************/
 		END
 		IF(@_ADDRESS_TYPE = 2)
 		BEGIN
+			--execute [CBaseCRM_Fresh].[dbo]._log 'YUR@_AFT_Address', @_AFT_Address
+			--execute [CBaseCRM_Fresh].[dbo]._log '@_ID_COMPANY', @_ID_COMPANY
 			--Обновляем существующие почтовый адресс
 			/*********************************************/	
 			UPDATE
 			TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
-			SET			ADRES_YUR				=		UPD.[Address]
-			FROM		INSERTED AS UPD
+			SET			ADRES_YUR				=		@_AFT_Address
 			WHERE		ID_COMPANY 				=		@_ID_COMPANY
 			AND			USE_DEFAULT				=		'True'
 			/*********************************************/
-		END
-		IF(@_ADDRESS_TYPE = 0)
-		BEGIN
-			--Обновляем существующие почтовый адресс
-			/*********************************************/	
-			UPDATE
-			TOP (1)		[CBaseCRM_Fresh].[dbo].[LIST_REQUIS_COMPANY]
-			SET			ADRES_FACT				=		UPD.[Address]
-			FROM		INSERTED AS UPD
-			WHERE		ID_COMPANY 				=		@_ID_COMPANY
-			AND			USE_DEFAULT				=		'True'
-			/*********************************************/
-		END
+		END		
 	END
 	IF(@_ADDRESS_TYPE = 0)
 	BEGIN
+		--execute [CBaseCRM_Fresh].[dbo]._log 'COMP_Address', @_AFT_Address
 		--Обновляем адрес компании
 		/*********************************************/	
 		UPDATE
 		TOP (1)		[CBaseCRM_Fresh].[dbo].[COMPANY]
-		SET			ADRES				=		ISNULL(UPD.ZipCode, '') + ' ' + ISNULL(UPD.City, '') + ' ' + ISNULL(UPD.[Address], '')
-		FROM		INSERTED AS UPD
+		SET			ADRES					=		@_AFT_ZipCode + ' ' + @_AFT_City + ' ' + @_AFT_Address
 		WHERE		ID_COMPANY 				=		@_ID_COMPANY
 		/*********************************************/
 	END

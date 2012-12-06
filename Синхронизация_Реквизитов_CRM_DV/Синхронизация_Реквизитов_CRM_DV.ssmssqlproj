@@ -31,11 +31,11 @@
           <AssociatedConnUserName>sa</AssociatedConnUserName>
           <FullPath>1 Создание триггера добавления и обновления email в реквизитах из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="10 Создание триггера добавления и обновления падежей директора в реквизитах из crm в dv.sql">
+        <FileNode Name="10 Создание триггера добавления и обновления падежей должности директора в реквизитах из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>10 Создание триггера добавления и обновления падежей директора в реквизитах из crm в dv.sql</FullPath>
+          <FullPath>10 Создание триггера добавления и обновления падежей должности директора в реквизитах из crm в dv.sql</FullPath>
         </FileNode>
         <FileNode Name="11 Создание триггера добавления и обновления почтового адреса в реквизитах из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>

@@ -42,7 +42,7 @@ BEGIN
 	TOP 1		@_ID_COMPANY			=		DEL.Telex
 	FROM		DELETED as DEL
 	/*********************************************/
-
+	IF(@_ID_COMPANY IS NULL) RETURN
 	--Отключаем Триггер в CRM
 	/*********************************************/
 	ALTER TABLE [CBaseCRM_Fresh].[dbo].[COMPANY]
@@ -56,5 +56,11 @@ BEGIN
 	FROM	[CBaseCRM_Fresh].[dbo].[COMPANY]
 	WHERE	ID_COMPANY	=	@_ID_COMPANY
 	/*********************************************/	
+	/*********************************************/
+	ALTER TABLE [CBaseCRM_Fresh].[dbo].[COMPANY]
+	ENABLE TRIGGER ALL
+	/*********************************************/
+	
+	
 	execute [CBaseCRM_Fresh].[dbo]._log 'Stop', @S
 END

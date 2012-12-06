@@ -68,7 +68,7 @@ BEGIN
 	--Отключаем Триггер в CRM
 	/*********************************************/
 	ALTER TABLE [CBaseCRM_Fresh].[dbo].[COMPANY]
-	DISABLE TRIGGER [CRM_DV_COMPANY_URL]
+	DISABLE TRIGGER ALL
 	/*********************************************/	
 
 	UPDATE
@@ -80,7 +80,7 @@ BEGIN
 	--Включаем Триггер в CRM
 	/*********************************************/		
 	ALTER TABLE [CBaseCRM_Fresh].[dbo].[COMPANY]
-	ENABLE TRIGGER [CRM_DV_COMPANY_URL]
+	ENABLE TRIGGER ALL
 	/*********************************************/
 
 	execute [CBaseCRM_Fresh].[dbo]._log 'Stop', @S	

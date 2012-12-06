@@ -61,7 +61,7 @@ BEGIN
 	--Отключаем Триггер в CRM
 	/*********************************************/
 	ALTER TABLE [Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
-	DISABLE TRIGGER [DV_CRM_Upd_Vid_Company]
+	DISABLE TRIGGER ALL
 	/*********************************************/
 	IF(@_ID_VID_COMPANY = 15)
 	BEGIN
@@ -91,7 +91,7 @@ BEGIN
 	--Включаем Триггер в CRM
 	/*********************************************/		
 	ALTER TABLE [Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
-	ENABLE TRIGGER [DV_CRM_Upd_Vid_Company]
+	ENABLE TRIGGER ALL
 	/*********************************************/	
 	execute [CBaseCRM_Fresh].[dbo]._log 'Stop', @S
 END

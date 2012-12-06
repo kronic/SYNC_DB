@@ -92,8 +92,8 @@ BEGIN
 	ALTER TABLE [CBaseCRM_Fresh].[dbo].[COMPANY]
 	ENABLE TRIGGER ALL
 	/*********************************************/
-	EXECUTE [CBaseCRM_Fresh].[dbo]._log '@_DV_ID_COMPANY', @_DV_ID_COMPANY
-	EXECUTE [CBaseCRM_Fresh].[dbo]._log '@_NEW_ID_COMPANY', @_NEW_ID_COMPANY
+	--EXECUTE [CBaseCRM_Fresh].[dbo]._log '@_DV_ID_COMPANY', @_DV_ID_COMPANY
+	--EXECUTE [CBaseCRM_Fresh].[dbo]._log '@_NEW_ID_COMPANY', @_NEW_ID_COMPANY
 	
 	--Запишем ключ контакта crm в dv
 	/*********************************************/

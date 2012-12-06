@@ -125,7 +125,7 @@ BEGIN
 		--Отключаем Триггер в DV
 		/*********************************************/
 		ALTER TABLE Copy_DV.[dbo].[dvtable_{1a46bf0f-2d02-4ac9-8866-5adf245921e8}] 
-		DISABLE TRIGGER DV_CRM_Upd_Position
+		DISABLE TRIGGER ALL
 		/*********************************************/	
 		
 
@@ -166,7 +166,7 @@ BEGIN
 		--Включаем Триггер в DV
 		/*********************************************/
 		ALTER TABLE [Copy_DV].[dbo].[dvtable_{1a46bf0f-2d02-4ac9-8866-5adf245921e8}]
-		ENABLE TRIGGER DV_CRM_Upd_Position
+		ENABLE TRIGGER ALL
 		/*********************************************/		
 	END
 	execute [CBaseCRM_Fresh].[dbo]._log 'Stop', @S		

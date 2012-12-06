@@ -96,7 +96,7 @@ BEGIN
 		--Отключаем Триггер в CRM
 		/*********************************************/
 		ALTER TABLE [Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
-		DISABLE TRIGGER DV_CRM_Ins_Add_Company, DV_CRM_Upd_Company_Name, DV_CRM_Upd_Req_Full_Name
+		DISABLE TRIGGER ALL
 		/*********************************************/	
 		
 		execute [CBaseCRM_Fresh].[dbo]._log '@_ID_COMPANY', @_ID_COMPANY		
@@ -139,7 +139,7 @@ BEGIN
 		--Включаем Триггер в CRM
 		/*********************************************/		
 		ALTER TABLE [Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
-		ENABLE TRIGGER DV_CRM_Ins_Add_Company, DV_CRM_Upd_Company_Name, DV_CRM_Upd_Req_Full_Name
+		ENABLE TRIGGER ALL
 		/*********************************************/	
 	END
 	--Иначе обновим её.
@@ -150,7 +150,7 @@ BEGIN
 		--Отключаем Триггер в CRM
 		/*********************************************/
 		ALTER TABLE [Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
-		DISABLE TRIGGER DV_CRM_Upd_Company_Name, DV_CRM_Upd_Req_Full_Name
+		DISABLE TRIGGER ALL
 		/*********************************************/	
 
 		UPDATE		
@@ -162,7 +162,7 @@ BEGIN
 		--Включаем Триггер в CRM
 		/*********************************************/		
 		ALTER TABLE [Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
-		ENABLE TRIGGER DV_CRM_Ins_Add_Company, DV_CRM_Upd_Req_Full_Name
+		ENABLE TRIGGER ALL
 		/*********************************************/	
 
 	END			

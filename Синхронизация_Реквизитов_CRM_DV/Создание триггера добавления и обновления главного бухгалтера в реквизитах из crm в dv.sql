@@ -82,7 +82,7 @@ BEGIN
 		--Отключаем Триггер в CRM
 		/*********************************************/
 		ALTER TABLE [Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
-		DISABLE TRIGGER [DV_CRM_Upd_Req_GL_BUH]
+		DISABLE TRIGGER ALL
 		/*********************************************/	
 
 		UPDATE
@@ -93,7 +93,7 @@ BEGIN
 		--Включаем Триггер в CRM
 		/*********************************************/		
 		ALTER TABLE [Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
-		ENABLE TRIGGER [DV_CRM_Upd_Req_GL_BUH]
+		ENABLE TRIGGER ALL
 		/*********************************************/	
 	END
 

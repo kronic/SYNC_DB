@@ -73,19 +73,19 @@ BEGIN
 	--Отключаем Триггер в DV
 	/*********************************************/
 	ALTER TABLE [Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
-	DISABLE TRIGGER [DV_CRM_Upd_Req_KS]
+	DISABLE TRIGGER ALL
 	/*********************************************/	
 
 	UPDATE
 	TOP (1)		[Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
-	SET			[CorrespondentAccount]=	@_KS
+	SET			[CorrespondentAccount]=			@_KS
 	WHERE		[Telex]			=	@_ID_COMPANY	
 	
 
 	--Включаем Триггер в CRM
 	/*********************************************/		
 	ALTER TABLE [Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
-	ENABLE TRIGGER [DV_CRM_Upd_Req_KS]
+	ENABLE TRIGGER ALL
 	/*********************************************/	
 		
 	execute [CBaseCRM_Fresh].[dbo]._log 'Stop', @S

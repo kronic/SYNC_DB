@@ -142,7 +142,7 @@ BEGIN
 	--Включаем Триггер в CRM
 	/*********************************************/
 	ALTER TABLE [CBaseCRM_Fresh].[dbo].[LIST_EMAIL_CLIENT]
-	ENABLE TRIGGER CRM_DV_LIST_EMAIL_CLIENT
+	ENABLE TRIGGER ALL
 	/*********************************************/	
 	
 	execute [CBaseCRM_Fresh].[dbo]._log 'Stop', @S

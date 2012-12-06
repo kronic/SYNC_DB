@@ -53,7 +53,7 @@ BEGIN
 	TOP 1		@_ID_CONTACT_MAN		=		DEL.CRM_ID				
 	FROM		DELETED as DEL;
 	/*********************************************/
-
+	IF(@_ID_CONTACT_MAN IS NULL) RETURN
 	
 	--Отключаем Триггер в CRM
 	/*********************************************/

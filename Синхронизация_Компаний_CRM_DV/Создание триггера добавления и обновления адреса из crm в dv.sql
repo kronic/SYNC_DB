@@ -119,7 +119,7 @@ BEGIN
 			--Отключаем Триггер в CRM
 			/*********************************************/
 			ALTER TABLE [Copy_DV].[dbo].[dvtable_{1de3032f-1956-4c37-ae14-a29f8b47e0ac}]
-			DISABLE TRIGGER [DV_CRM_Upd_Address]
+			DISABLE TRIGGER ALL
 			/*********************************************/	
 
 			UPDATE
@@ -131,7 +131,7 @@ BEGIN
 			--Включаем Триггер в CRM
 			/*********************************************/		
 			ALTER TABLE [Copy_DV].[dbo].[dvtable_{1de3032f-1956-4c37-ae14-a29f8b47e0ac}]
-			ENABLE TRIGGER [DV_CRM_Upd_Address]
+			ENABLE TRIGGER ALL
 			/*********************************************/	
 		END
 	END		

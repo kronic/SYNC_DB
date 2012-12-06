@@ -89,7 +89,7 @@ BEGIN
 		--Отключаем Триггер в DV
 		/*********************************************/
 		ALTER TABLE [Copy_DV].[dbo].[dvtable_{1a46bf0f-2d02-4ac9-8866-5adf245921e8}]
-		DISABLE TRIGGER DV_CRM_Upd_Email
+		DISABLE TRIGGER ALL
 		/*********************************************/	
 
 		UPDATE
@@ -101,7 +101,7 @@ BEGIN
 		--Включаем Триггер в DV
 		/*********************************************/
 		ALTER TABLE [Copy_DV].[dbo].[dvtable_{1a46bf0f-2d02-4ac9-8866-5adf245921e8}]
-		ENABLE TRIGGER DV_CRM_Upd_Email
+		ENABLE TRIGGER ALL
 		/*********************************************/	
 	END
 	ELSE
@@ -109,7 +109,7 @@ BEGIN
 		--Отключаем Триггер в DV
 		/*********************************************/
 		ALTER TABLE [Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
-		DISABLE TRIGGER DV_CRM_Upd_Req_email
+		DISABLE TRIGGER ALL
 		/*********************************************/		
 		UPDATE
 		TOP (1)		Copy_DV.[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
@@ -118,7 +118,7 @@ BEGIN
 		--Включаем Триггер в DV
 		/*********************************************/
 		ALTER TABLE [Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
-		ENABLE TRIGGER DV_CRM_Upd_Req_email
+		ENABLE TRIGGER ALL
 		/*********************************************/	
 	END
 	/*********************************************/

@@ -82,18 +82,18 @@ BEGIN
 		--Отключаем Триггер в CRM
 		/*********************************************/
 		ALTER TABLE [Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
-		DISABLE TRIGGER [DV_CRM_Upd_Req_Dir_Name]
+		DISABLE TRIGGER ALL
 		/*********************************************/	
 
 		UPDATE
 		TOP (1)		[Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
-		SET			Manager			=	@_DV_Manager
+		SET			[Manager]		=	@_DV_Manager
 		WHERE		Telex			=	@_ID_COMPANY
 
 		--Включаем Триггер в CRM
 		/*********************************************/		
 		ALTER TABLE [Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
-		ENABLE TRIGGER [DV_CRM_Upd_Req_Dir_Name]
+		ENABLE TRIGGER ALL
 		/*********************************************/	
 	END
 

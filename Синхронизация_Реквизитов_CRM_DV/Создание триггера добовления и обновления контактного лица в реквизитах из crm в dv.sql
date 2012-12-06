@@ -87,7 +87,7 @@ BEGIN
 
 		UPDATE
 		TOP (1)		[Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
-		SET			ContactPerson	=	@_DV_KONT_L_C
+		SET			[ContactPerson]	=	@_DV_KONT_L_C
 		WHERE		Telex			=	@_ID_COMPANY	
 
 		--Включаем Триггер в CRM

@@ -90,7 +90,7 @@ BEGIN
 		--Отключаем Триггеры в DV
 		/*********************************************/
 		ALTER TABLE Copy_DV.[dbo].[dvtable_{1a46bf0f-2d02-4ac9-8866-5adf245921e8}]
-		DISABLE TRIGGER	DV_CRM_Upd_Phone
+		DISABLE TRIGGER	ALL
 		/*********************************************/
 	
 		--Обновляем сотв. запись в DV
@@ -104,7 +104,7 @@ BEGIN
 		--Включаем Триггеры в DV
 		/*********************************************/
 		ALTER TABLE Copy_DV.[dbo].[dvtable_{1a46bf0f-2d02-4ac9-8866-5adf245921e8}]
-		ENABLE TRIGGER [DV_CRM_Upd_Phone]
+		ENABLE TRIGGER ALL
 		/*********************************************/
 	
 	END
@@ -113,7 +113,7 @@ BEGIN
 		--Отключаем Триггер в DV
 		/*********************************************/
 		ALTER TABLE [Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
-		DISABLE TRIGGER [DV_CRM_Upd_Req_Tel]
+		DISABLE TRIGGER ALL
 		/*********************************************/		
 		execute _log '@_ID_CONTACT_MAN_INS', @_ID_COMPANY
 		
@@ -125,7 +125,7 @@ BEGIN
 		--Включаем Триггер в DV
 		/*********************************************/
 		ALTER TABLE [Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
-		ENABLE TRIGGER [DV_CRM_Upd_Req_Tel]
+		ENABLE TRIGGER ALL
 		/*********************************************/	
 	END
 	execute [CBaseCRM_Fresh].[dbo]._log 'Stop', @S

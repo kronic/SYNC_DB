@@ -67,6 +67,12 @@
           <AssociatedConnUserName>sa</AssociatedConnUserName>
           <FullPath>Создание триггера добавления компании из dv в crm.sql</FullPath>
         </FileNode>
+        <FileNode Name="Создание триггера удаления компании из dv в crm.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
+          <AssociatedConnUserName>sa</AssociatedConnUserName>
+          <FullPath>Создание триггера удаления компании из dv в crm.sql</FullPath>
+        </FileNode>
       </Items>
     </LogicalFolder>
     <LogicalFolder Name="Разное" Type="3" Sorted="true">

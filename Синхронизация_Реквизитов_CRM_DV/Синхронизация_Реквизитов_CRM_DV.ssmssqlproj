@@ -25,101 +25,101 @@
           <AssociatedConnUserName>sa</AssociatedConnUserName>
           <FullPath>_Удаление записей реквизитов ссылающихся на несуществующий ключ.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создание триггера добавления и обновления email в реквизитах из crm в dv.sql">
+        <FileNode Name="1 Создание триггера добавления и обновления email в реквизитах из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создание триггера добавления и обновления email в реквизитах из crm в dv.sql</FullPath>
+          <FullPath>1 Создание триггера добавления и обновления email в реквизитах из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создание триггера добавления и обновления БИК в реквизитах из crm в dv.sql">
+        <FileNode Name="10 Создание триггера добавления и обновления падежей директора в реквизитах из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создание триггера добавления и обновления БИК в реквизитах из crm в dv.sql</FullPath>
+          <FullPath>10 Создание триггера добавления и обновления падежей директора в реквизитах из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создание триггера добавления и обновления главного бухгалтера в реквизитах из crm в dv.sql">
+        <FileNode Name="11 Создание триггера добавления и обновления почтового адреса в реквизитах из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создание триггера добавления и обновления главного бухгалтера в реквизитах из crm в dv.sql</FullPath>
+          <FullPath>11 Создание триггера добавления и обновления почтового адреса в реквизитах из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создание триггера добавления и обновления имя банка в реквизитах из crm в dv.sql">
+        <FileNode Name="12 Создание триггера добавления и обновления РС в реквизитах из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создание триггера добавления и обновления имя банка в реквизитах из crm в dv.sql</FullPath>
+          <FullPath>12 Создание триггера добавления и обновления РС в реквизитах из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создание триггера добавления и обновления ИНН в реквизитах из crm в dv.sql">
+        <FileNode Name="13 Создание триггера добавления и обновления руководителя в реквизитах из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создание триггера добавления и обновления ИНН в реквизитах из crm в dv.sql</FullPath>
+          <FullPath>13 Создание триггера добавления и обновления руководителя в реквизитах из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создание триггера добавления и обновления КПП в реквизитах из crm в dv.sql">
+        <FileNode Name="14 Создание триггера добавления и обновления факса в реквизитах из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создание триггера добавления и обновления КПП в реквизитах из crm в dv.sql</FullPath>
+          <FullPath>14 Создание триггера добавления и обновления факса в реквизитах из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создание триггера добавления и обновления КС в реквизитах из crm в dv.sql">
+        <FileNode Name="15 Создание триггера добавления и обновления юридического адреса в реквизитах из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создание триггера добавления и обновления КС в реквизитах из crm в dv.sql</FullPath>
+          <FullPath>15 Создание триггера добавления и обновления юридического адреса в реквизитах из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создание триггера добавления и обновления ОКВЕД в реквизитах из crm в dv.sql">
+        <FileNode Name="16 Создание триггера добовления и обновления контактного лица в реквизитах из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создание триггера добавления и обновления ОКВЕД в реквизитах из crm в dv.sql</FullPath>
+          <FullPath>16 Создание триггера добовления и обновления контактного лица в реквизитах из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создание триггера добавления и обновления ОКПО в реквизитах из crm в dv.sql">
+        <FileNode Name="2 Создание триггера добавления и обновления БИК в реквизитах из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создание триггера добавления и обновления ОКПО в реквизитах из crm в dv.sql</FullPath>
+          <FullPath>2 Создание триггера добавления и обновления БИК в реквизитах из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создание триггера добавления и обновления падежей директора в реквизитах из crm в dv.sql">
+        <FileNode Name="3 Создание триггера добавления и обновления главного бухгалтера в реквизитах из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создание триггера добавления и обновления падежей директора в реквизитах из crm в dv.sql</FullPath>
+          <FullPath>3 Создание триггера добавления и обновления главного бухгалтера в реквизитах из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создание триггера добавления и обновления почтового адреса в реквизитах из crm в dv.sql">
+        <FileNode Name="4 Создание триггера добавления и обновления имя банка в реквизитах из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создание триггера добавления и обновления почтового адреса в реквизитах из crm в dv.sql</FullPath>
+          <FullPath>4 Создание триггера добавления и обновления имя банка в реквизитах из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создание триггера добавления и обновления РС в реквизитах из crm в dv.sql">
+        <FileNode Name="5 Создание триггера добавления и обновления ИНН в реквизитах из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создание триггера добавления и обновления РС в реквизитах из crm в dv.sql</FullPath>
+          <FullPath>5 Создание триггера добавления и обновления ИНН в реквизитах из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создание триггера добавления и обновления руководителя в реквизитах из crm в dv.sql">
+        <FileNode Name="6 Создание триггера добавления и обновления КПП в реквизитах из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создание триггера добавления и обновления руководителя в реквизитах из crm в dv.sql</FullPath>
+          <FullPath>6 Создание триггера добавления и обновления КПП в реквизитах из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создание триггера добавления и обновления факса в реквизитах из crm в dv.sql">
+        <FileNode Name="7 Создание триггера добавления и обновления КС в реквизитах из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создание триггера добавления и обновления факса в реквизитах из crm в dv.sql</FullPath>
+          <FullPath>7 Создание триггера добавления и обновления КС в реквизитах из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создание триггера добавления и обновления юридического адреса в реквизитах из crm в dv.sql">
+        <FileNode Name="8 Создание триггера добавления и обновления ОКВЕД в реквизитах из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создание триггера добавления и обновления юридического адреса в реквизитах из crm в dv.sql</FullPath>
+          <FullPath>8 Создание триггера добавления и обновления ОКВЕД в реквизитах из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создание триггера добовления и обновления контактного лица в реквизитах из crm в dv.sql">
+        <FileNode Name="9 Создание триггера добавления и обновления ОКПО в реквизитах из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создание триггера добовления и обновления контактного лица в реквизитах из crm в dv.sql</FullPath>
+          <FullPath>9 Создание триггера добавления и обновления ОКПО в реквизитах из crm в dv.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>

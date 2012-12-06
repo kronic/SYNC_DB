@@ -14,19 +14,19 @@ GO
 
 --Удаляем триггер если он существует.
 /*********************************************/
-IF object_id('CRM_DV_VID_COMPANY', 'TR') IS NOT NULL
-DROP TRIGGER CRM_DV_VID_COMPANY
+IF object_id('CRM_DV_FAX', 'TR') IS NOT NULL
+DROP TRIGGER CRM_DV_FAX
 GO
 /*********************************************/
 
 --Добавляем триггер. добовления  контактов в DV при добовление в CRM.
 /*********************************************/
-CREATE TRIGGER CRM_DV_VID_COMPANY
-   ON [dbo].[COMPANY]
+CREATE TRIGGER CRM_DV_FAX
+   ON [dbo].[LIST_REQUIS_COMPANY]
    AFTER INSERT, UPDATE
 /*********************************************/
 AS
-IF(UPDATE(ID_VID_COMPANY))
+IF(UPDATE(FAX))
 BEGIN
 	--Получаем имя запучченого триггера
 	/*********************************************/
@@ -37,6 +37,7 @@ BEGIN
 	FROM		sysobjects 
 	WHERE		[id]	=	@K
 	/*********************************************/
+	
 	execute [CBaseCRM_Fresh].[dbo]._log 'Start', @S
 
 	-- SET NOCOUNT ON added to prevent extra result sets from
@@ -46,52 +47,46 @@ BEGIN
 	--Переменные
 	/*********************************************/
 	DECLARE		@_ID_COMPANY				int
-	DECLARE     @_ID_VID_COMPANY			int
+	DECLARE		@_FAX						varchar(200)
+	DECLARE		@_COUNT_REQ					int
+	DECLARE		@_USE_DEFAULT				varchar(10)
 	/*********************************************/
 	
-
 	--Заполняем переменные значениями
 	/*********************************************/
 	SELECT		@_ID_COMPANY		=		INS.ID_COMPANY,				
-				@_ID_VID_COMPANY	=		INS.ID_VID_COMPANY
-	FROM		INSERTED AS INS
+				@_FAX				=		INS.FAX,
+				@_USE_DEFAULT		=		INS.USE_DEFAULT
+	FROM		INSERTED AS INS	
+	
+	SELECT		@_COUNT_REQ = COUNT(ID_COMPANY)
+	FROM		[LIST_REQUIS_COMPANY]
+	WHERE		ID_COMPANY			=		@_ID_COMPANY	
 	/*********************************************/
 	
-	execute [CBaseCRM_Fresh].[dbo]._log '@_ID_VID_COMPANY', @_ID_VID_COMPANY		
+	IF(@_USE_DEFAULT != 'True' AND @_COUNT_REQ > 1 )
+	BEGIN
+		execute [CBaseCRM_Fresh].[dbo]._log 'Stop', @S
+		RETURN
+	END
+	--execute [CBaseCRM_Fresh].[dbo]._log '@_FAX', @_FAX
 	--Отключаем Триггер в CRM
 	/*********************************************/
 	ALTER TABLE [Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
 	DISABLE TRIGGER ALL
-	/*********************************************/
-	IF(@_ID_VID_COMPANY = 15)
-	BEGIN
-		UPDATE
-		TOP (1)		[Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
-		SET			[IsVendor]						=		1,
-					[IsClient]						=		0
-		WHERE		[Telex]							=		@_ID_COMPANY
-	END
-	ELSE IF(@_ID_VID_COMPANY = 15)
-	BEGIN
-		UPDATE
-		TOP (1)		[Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
-		SET			[IsVendor]						=		0,
-					[IsClient]						=		0
-		WHERE		[Telex]							=		@_ID_COMPANY
-	END
-	ELSE
-	BEGIN
-		UPDATE
-		TOP (1)		[Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
-		SET			[IsClient]						=		1,
-					[IsVendor]						=		0
-		WHERE		[Telex]							=		@_ID_COMPANY	
-	END
+	/*********************************************/	
+
+	UPDATE
+	TOP (1)		[Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
+	SET			[Fax]			=	LEFT(@_FAX, 64)
+	WHERE		Telex			=	@_ID_COMPANY	
+	
 
 	--Включаем Триггер в CRM
 	/*********************************************/		
 	ALTER TABLE [Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
 	ENABLE TRIGGER ALL
 	/*********************************************/	
+		
 	execute [CBaseCRM_Fresh].[dbo]._log 'Stop', @S
 END

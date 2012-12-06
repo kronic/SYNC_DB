@@ -23,7 +23,7 @@ GO
 /*********************************************/
 CREATE TRIGGER CRM_DV_FORM_ADRES
    ON [dbo].[COMPANY]
-   AFTER INSERT, UPDATE
+   AFTER UPDATE, INSERT
 /*********************************************/
 AS
 IF(UPDATE(ADRES))

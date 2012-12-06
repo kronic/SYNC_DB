@@ -92,7 +92,7 @@ BEGIN
 	FROM		Copy_DV.[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
 	WHERE		Telex						=		@_ID_COMPANY
 	/*********************************************/
-	execute _log '@@_ID_COMPANY', @_ID_COMPANY
+	--execute _log '@@_ID_COMPANY', @_ID_COMPANY
 
 	
 	--Ключ на должность	

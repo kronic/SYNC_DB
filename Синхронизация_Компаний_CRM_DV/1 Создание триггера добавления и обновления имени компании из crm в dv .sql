@@ -75,7 +75,7 @@ BEGIN
 	--Если нет компании добавим её в DV	
 	IF(@_DV_ID_COMPANY IS NULL)
 	BEGIN
-		execute [CBaseCRM_Fresh].[dbo]._log '', 'Добовляем'		
+		--execute [CBaseCRM_Fresh].[dbo]._log '', 'Добовляем'		
 		--Новый Ключ
 		/*********************************************/
 		DECLARE		@NEW_RowID					uniqueidentifier 
@@ -99,7 +99,7 @@ BEGIN
 		DISABLE TRIGGER ALL
 		/*********************************************/	
 		
-		execute [CBaseCRM_Fresh].[dbo]._log '@_ID_COMPANY', @_ID_COMPANY		
+		--execute [CBaseCRM_Fresh].[dbo]._log '@_ID_COMPANY', @_ID_COMPANY		
 		
 		INSERT INTO [Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}] 
 			(
@@ -145,7 +145,7 @@ BEGIN
 	--Иначе обновим её.
 	ELSE
 	BEGIN
-		execute [CBaseCRM_Fresh].[dbo]._log '', 'Обновляем'	
+		--execute [CBaseCRM_Fresh].[dbo]._log '', 'Обновляем'	
 			
 		--Отключаем Триггер в CRM
 		/*********************************************/
@@ -168,3 +168,8 @@ BEGIN
 	END			
 	execute [CBaseCRM_Fresh].[dbo]._log 'Stop', @S
 END
+--Выполнение триггера первым
+--exec sp_settriggerorder 'CRM_DV_COMPANY_NAME', 'first', 'insert'
+--GO
+--exec sp_settriggerorder 'CRM_DV_COMPANY_NAME', 'first', 'update'
+--GO

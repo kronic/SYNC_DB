@@ -25,35 +25,35 @@
           <AssociatedConnUserName>sa</AssociatedConnUserName>
           <FullPath>_______Создания триггера удаление контактов из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создания триггера добавления и обновления Email из crm в dv.sql">
+        <FileNode Name="1 Создания триггера добавления контактов из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создания триггера добавления и обновления Email из crm в dv.sql</FullPath>
+          <FullPath>1 Создания триггера добавления контактов из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создания триггера добавления и обновления должности из crm в dv.sql">
+        <FileNode Name="2 Создания триггера добавления и обновления Email из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создания триггера добавления и обновления должности из crm в dv.sql</FullPath>
+          <FullPath>2 Создания триггера добавления и обновления Email из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создания триггера добавления и обновления телефонов из crm в dv.sql">
+        <FileNode Name="3 Создания триггера добавления и обновления должности из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создания триггера добавления и обновления телефонов из crm в dv.sql</FullPath>
+          <FullPath>3 Создания триггера добавления и обновления должности из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создания триггера добавления контактов из crm в dv.sql">
+        <FileNode Name="4 Создания триггера добавления и обновления телефонов из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создания триггера добавления контактов из crm в dv.sql</FullPath>
+          <FullPath>4 Создания триггера добавления и обновления телефонов из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создания триггера обновления контактов из crm в dv.sql">
+        <FileNode Name="5 Создания триггера обновления контактов из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создания триггера обновления контактов из crm в dv.sql</FullPath>
+          <FullPath>5 Создания триггера обновления контактов из crm в dv.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>

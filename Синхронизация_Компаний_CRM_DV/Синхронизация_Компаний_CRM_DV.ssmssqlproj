@@ -25,41 +25,41 @@
           <AssociatedConnUserName>sa</AssociatedConnUserName>
           <FullPath>_Просмотр неправильных компаний в crm.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создание триггера добавления и обновления URL из crm в dv.sql">
+        <FileNode Name="1 Создание триггера добавления и обновления имени компании из crm в dv .sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создание триггера добавления и обновления URL из crm в dv.sql</FullPath>
+          <FullPath>1 Создание триггера добавления и обновления имени компании из crm в dv .sql</FullPath>
         </FileNode>
-        <FileNode Name="Создание триггера добавления и обновления адреса из crm в dv.sql">
+        <FileNode Name="2 Создание триггера добавления и обновления URL из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создание триггера добавления и обновления адреса из crm в dv.sql</FullPath>
+          <FullPath>2 Создание триггера добавления и обновления URL из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создание триггера добавления и обновления вид компании из crm в dv.sql">
+        <FileNode Name="3 Создание триггера добавления и обновления адреса из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создание триггера добавления и обновления вид компании из crm в dv.sql</FullPath>
+          <FullPath>3 Создание триггера добавления и обновления адреса из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создание триггера добавления и обновления имени компании из crm в dv .sql">
+        <FileNode Name="4 Создание триггера добавления и обновления вид компании из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создание триггера добавления и обновления имени компании из crm в dv .sql</FullPath>
+          <FullPath>4 Создание триггера добавления и обновления вид компании из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создание триггера добавления и обновления менеджера из crm в dv.sql">
+        <FileNode Name="5 Создание триггера добавления и обновления менеджера из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создание триггера добавления и обновления менеджера из crm в dv.sql</FullPath>
+          <FullPath>5 Создание триггера добавления и обновления менеджера из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="Создание триггера добавления и обновления формы собственности из crm в dv.sql">
+        <FileNode Name="6 Создание триггера добавления и обновления формы собственности из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>Создание триггера добавления и обновления формы собственности из crm в dv.sql</FullPath>
+          <FullPath>6 Создание триггера добавления и обновления формы собственности из crm в dv.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>

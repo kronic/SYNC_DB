@@ -81,8 +81,8 @@ BEGIN
 	ELSE
 	SET			@_TELEPHONE						=		@_TELEPHONE_MIN
 	
-	execute _log '@_TELEPHONE', @_TELEPHONE
-	execute _log '@_ID_CONTACT_MAN_INS', @_ID_CONTACT_MAN_INS
+	--execute _log '@_TELEPHONE', @_TELEPHONE
+	--execute _log '@_ID_CONTACT_MAN_INS', @_ID_CONTACT_MAN_INS
 	/*********************************************/
 	
 	IF(@_ID_CONTACT_MAN_INS != 0 AND @_ID_CONTACT_MAN_INS IS NOT NULL)
@@ -115,7 +115,7 @@ BEGIN
 		ALTER TABLE [Copy_DV].[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]
 		DISABLE TRIGGER ALL
 		/*********************************************/		
-		execute _log '@_ID_CONTACT_MAN_INS', @_ID_COMPANY
+		--execute _log '@_ID_CONTACT_MAN_INS', @_ID_COMPANY
 		
 		UPDATE
 		TOP (1)		Copy_DV.[dbo].[dvtable_{c78abded-db1c-4217-ae0d-51a400546923}]

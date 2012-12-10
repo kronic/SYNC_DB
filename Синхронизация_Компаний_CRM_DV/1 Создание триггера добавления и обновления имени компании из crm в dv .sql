@@ -5,6 +5,9 @@ SET QUOTED_IDENTIFIER ON
 GO
 SET CONCAT_NULL_YIELDS_NULL ON;
 GO
+SET TRANSACTION ISOLATION
+LEVEL SERIALIZABLE
+GO
 -- =============================================
 -- Author:		Иван Берлинец
 -- Create date: 14.11.2012
@@ -28,6 +31,7 @@ CREATE TRIGGER CRM_DV_COMPANY_NAME
 AS
 IF(UPDATE(COMPANY_NAME))
 BEGIN
+	BEGIN TRAN tr1 
 	--Получаем имя запучченого триггера
 	/*********************************************/
 	DECLARE		@S			varchar(100)
@@ -166,7 +170,9 @@ BEGIN
 		/*********************************************/	
 
 	END			
+	
 	execute [CBaseCRM_Fresh].[dbo]._log 'Stop', @S
+	COMMIT TRAN tr1
 END
 --Выполнение триггера первым
 --exec sp_settriggerorder 'CRM_DV_COMPANY_NAME', 'first', 'insert'

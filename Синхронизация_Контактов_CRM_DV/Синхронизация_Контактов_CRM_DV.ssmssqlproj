@@ -31,11 +31,11 @@
           <AssociatedConnUserName>sa</AssociatedConnUserName>
           <FullPath>1 Создания триггера добавления контактов из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="2 Создания триггера добавления и обновления Email из crm в dv.sql">
+        <FileNode Name="2 Создания триггера обновления контактов из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>2 Создания триггера добавления и обновления Email из crm в dv.sql</FullPath>
+          <FullPath>2 Создания триггера обновления контактов из crm в dv.sql</FullPath>
         </FileNode>
         <FileNode Name="3 Создания триггера добавления и обновления должности из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
@@ -49,11 +49,11 @@
           <AssociatedConnUserName>sa</AssociatedConnUserName>
           <FullPath>4 Создания триггера добавления и обновления телефонов из crm в dv.sql</FullPath>
         </FileNode>
-        <FileNode Name="5 Создания триггера обновления контактов из crm в dv.sql">
+        <FileNode Name="5 Создания триггера добавления и обновления Email из crm в dv.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:ITS04V\SQL2005:False:sa</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>ITS04V\SQL2005</AssociatedConnSrvName>
           <AssociatedConnUserName>sa</AssociatedConnUserName>
-          <FullPath>5 Создания триггера обновления контактов из crm в dv.sql</FullPath>
+          <FullPath>5 Создания триггера добавления и обновления Email из crm в dv.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>

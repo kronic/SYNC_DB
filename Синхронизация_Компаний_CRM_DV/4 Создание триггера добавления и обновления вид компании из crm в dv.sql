@@ -31,9 +31,7 @@ BEGIN
 	-- SET NOCOUNT ON added to prevent extra result sets from
 	-- interfering with SELECT statements.
 	SET NOCOUNT ON;
-	SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
-	BEGIN TRAN tr1
-	
+		
 	--Переменные
 	/*********************************************/
 	DECLARE		@_ID_COMPANY				int
@@ -47,6 +45,8 @@ BEGIN
 	FROM		INSERTED AS INS
 	/*********************************************/
 	IF(@_ID_VID_COMPANY IS NULL) RETURN
+	SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+	BEGIN TRAN tr1
 
 	--Получаем имя запучченого триггера
 	/*********************************************/

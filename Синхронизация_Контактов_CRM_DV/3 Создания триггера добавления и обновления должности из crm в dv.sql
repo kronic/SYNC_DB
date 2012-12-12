@@ -26,6 +26,12 @@ CREATE TRIGGER CRM_DV_DISCRIPTION_CONTACT_MAN
 AS
 IF (UPDATE(DISCRIPTION_CONTACT_MAN))
 BEGIN
+	-- SET NOCOUNT ON added to prevent extra result sets from
+	-- interfering with SELECT statements.
+	SET NOCOUNT ON;	
+	SET TRANSACTION ISOLATION LEVEL SERIALIZABLE;
+	BEGIN TRAN tr1
+	 
 	--Получаем имя запучченого триггера
 	/*********************************************/
 	DECLARE		@S			varchar(100)
@@ -36,11 +42,7 @@ BEGIN
 	WHERE		[id]	=	@K
 	/*********************************************/
 	execute [CBaseCRM_Fresh].[dbo]._log 'Start', @S
-
-	-- SET NOCOUNT ON added to prevent extra result sets from
-	-- interfering with SELECT statements.
-	SET NOCOUNT ON
-	
+		
 	-- Очистим лог
 	/*********************************************/
 	--DELETE [dbo].[Log]
@@ -169,6 +171,26 @@ BEGIN
 		ENABLE TRIGGER ALL
 		/*********************************************/		
 	END
-	execute [CBaseCRM_Fresh].[dbo]._log 'Stop', @S		
+	
+	--Обновляем время в dv для поевления объекта
+	/*********************************************/		
+	UPDATE [Copy_DV].[dbo].[dvsys_instances_date]
+	SET  [ChangeDateTime] = CURRENT_TIMESTAMP
+	WHERE [InstanceID] = N'65FF9382-17DC-4E9F-8E93-84D6D3D8FE8C'				
+	/*********************************************/	
+	--если ошибка откат транзакции
+	/*********************************************/	
+	IF @@ERROR != 0
+	BEGIN		
+		execute [CBaseCRM_Fresh].[dbo]._log 'ERROR TRAN = ', @S
+		ROLLBACK TRANSACTION
+		RETURN
+	END
+	/*********************************************/	
+	execute [CBaseCRM_Fresh].[dbo]._log 'Stop', @S	
+	--комитим транзакцию
+	/*********************************************/	
+	COMMIT TRAN tr1
+	/*********************************************/	
 END
 GO
